@@ -29,7 +29,7 @@ resolvers ++= Seq(
 /** Source Dependencies */
 libraryDependencies ++= Seq(
   "com.beust" % "jcommander" % "1.72",
-  "org.scalaj" %% "scalaj-http" % "2.3.0"
+  "org.scalaj" % "scalaj-http_2.12" % "2.3.0"
 )
 
 /** Make sure to fork on run */
