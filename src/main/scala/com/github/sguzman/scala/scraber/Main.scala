@@ -1,7 +1,7 @@
 package com.github.sguzman.scala.scraber
 
 import com.github.sguzman.scala.scraber.args.Argv
-import com.github.sguzman.scala.scraber.json.postuser.{UserAnswerMobile, UserHandleAnswerMobile, UserIdentifierMobile, UserMobile}
+import com.github.sguzman.scala.scraber.json.request.user.{UserAnswerMobile, UserHandleAnswerMobile, UserIdentifierMobile, UserMobile}
 import io.circe.generic.auto._
 import io.circe.syntax._
 

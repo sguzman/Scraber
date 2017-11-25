@@ -1,4 +1,4 @@
-package com.github.sguzman.scala.scraber.json.postuser
+package com.github.sguzman.scala.scraber.json.request.user
 
 case class
 UserAnswerEmail(
