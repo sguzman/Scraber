@@ -1,6 +1,6 @@
 package com.github.sguzman.scala.scraber.args
 
-import com.beust.jcommander.Parameter
+import com.beust.jcommander.{JCommander, Parameter}
 
 class Argv {
   @Parameter(
@@ -11,6 +11,7 @@ class Argv {
     hidden = false,
     required = true,
     password = false,
+    help = false,
     order = 1
   )
   var user: String = ""
@@ -23,7 +24,39 @@ class Argv {
     hidden = false,
     required = true,
     password = true,
+    help = false,
     order = 2
   )
   var pass: String = ""
+
+  @Parameter(
+    names = Array("-h", "--help", "--helpme"),
+    description = "Display help menu",
+    arity = 0,
+    echoInput = true,
+    hidden = false,
+    required = false,
+    password = false,
+    help = true,
+    order = 3
+  )
+  var help: Boolean = false
+}
+
+object Argv {
+  def apply(args: Array[String]): Argv = {
+    val argv = new Argv
+    val j = JCommander
+      .newBuilder
+      .addObject(argv)
+      .build
+
+    j.parse(args: _*)
+    if (argv.help) {
+      j.usage()
+      System.exit(0)
+    }
+
+    argv
+  }
 }
