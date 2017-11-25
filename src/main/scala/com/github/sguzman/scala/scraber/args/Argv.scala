@@ -30,6 +30,19 @@ class Argv {
   var pass: String = ""
 
   @Parameter(
+    names = Array("-c", "--country", "--countryCode"),
+    description = "Phone number country code",
+    arity = 1,
+    echoInput = true,
+    hidden = false,
+    required = false,
+    password = false,
+    help = false,
+    order = 3
+  )
+  var country: String = ""
+
+  @Parameter(
     names = Array("-h", "--help", "--helpme"),
     description = "Display help menu",
     arity = 0,
@@ -38,7 +51,7 @@ class Argv {
     required = false,
     password = false,
     help = true,
-    order = 3
+    order = 4
   )
   var help: Boolean = false
 }
