@@ -1,6 +1,7 @@
 package com.github.sguzman.scala.scraber
 
 import com.github.sguzman.scala.scraber.args.Argv
+import com.github.sguzman.scala.scraber.json.request.password.{Answer, Password}
 import com.github.sguzman.scala.scraber.json.request.user.{UserAnswerMobile, UserHandleAnswerMobile, UserIdentifierMobile, UserMobile}
 import io.circe.generic.auto._
 import io.circe.syntax._
@@ -26,10 +27,13 @@ object Main {
       init = true)
 
     val bodyStr = body.asJson.noSpaces
-
     val response2 = post(response, bodyStr)
 
-    println(response2.body)
+    val body2 = Password(Answer("VERIFY_PASSWORD", argv.pass), rememberMe = true)
+    val bodyStr2 = body2.asJson.noSpaces
+    val response3 = post(response2, bodyStr2)
+
+    println(response3.body)
   }
 
   def post(lastResponse: HttpResponse[String], body: String) = {
