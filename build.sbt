@@ -29,7 +29,10 @@ resolvers ++= Seq(
 /** Source Dependencies */
 libraryDependencies ++= Seq(
   "com.beust" % "jcommander" % "1.72",
-  "org.scalaj" % "scalaj-http_2.12" % "2.3.0"
+  "org.scalaj" % "scalaj-http_2.12" % "2.3.0",
+  "io.circe" % "circe-core_2.12" % "0.9.0-M2",
+  "io.circe" % "circe-generic_2.12" % "0.9.0-M2",
+  "io.circe" % "circe-parser_2.12" % "0.9.0-M2"
 )
 
 /** Make sure to fork on run */
